@@ -3,7 +3,7 @@ require 'json'
 class DataSet
   attr_reader :data
 
-  def initialize(input = File.open("/Users/ben/Downloads/zips.json").read)
+  def initialize(input = File.open("zips.json").read)
     @data = Hash.new { |hash, key| hash[key] = {'pop' => 0, 'cities' => Hash.new(0) } }
 
     JSON.parse(input)['cities'].each do |data|
